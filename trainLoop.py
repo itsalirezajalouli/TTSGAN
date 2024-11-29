@@ -122,7 +122,7 @@ def trainGan(generator, discriminator, trainData, numEpochs = 100, batchSize = 6
             torch.save(generator.state_dict(), f'generator_epoch_{epoch+1}.pth')
             torch.save(discriminator.state_dict(), f'discriminator_epoch_{epoch+1}.pth')
 
-def main():
+def train():
     # Initialize models
     generator = Generator()
     discriminator = Discriminator()
@@ -132,5 +132,4 @@ def main():
     # Train the GAN
     trainGan(generator, discriminator, trainData)
 
-if __name__ == '__main__':
-    main()
+train()
